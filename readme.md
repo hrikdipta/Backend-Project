@@ -1,23 +1,25 @@
 ## Setup Instructions
 
 1. Clone the repository
-    git clone <repo url>
-    cd Backend Project
+ ```
+     git clone https://github.com/hrikdipta/Backend-Project
+     cd Backend Project
+   ```
 
 2. Insatll dependencies
+3. ```
     npm install
+   ```
     
-3. set up enviromental variables
-    create a file '.env' in root directory and add the following
-
+4. set up enviromental variables
+    create a file `.env` in root directory and add the following
+```
         PORT=3000
-
         MONGODB_URI="mongodb+srv://hrikdiptakundu123:eLIbWVqhukYyDbOt@cluster0.g5oijl1.mongodb.net/retryWrites=true&w=majority&appName=Cluster0"
-
         JWT_SECRET="hrikdiptakundu123"
-
-4. Run the server
-    npm run dev
+```
+5. Run the server
+```  npm run dev```
 
 ## API endpoints
 
