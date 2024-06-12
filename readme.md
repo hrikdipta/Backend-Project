@@ -5,7 +5,6 @@
      git clone https://github.com/hrikdipta/Backend-Project
      cd Backend Project
    ```
-
 2. Insatll dependencies
 3. ```
     npm install
@@ -19,19 +18,26 @@
         JWT_SECRET="hrikdiptakundu123"
 ```
 5. Run the server
-```  npm run dev```
+```
+npm run dev
+```
 
 ## API endpoints
 
-# auth API
+### auth API
 
 create a new user : `POST /api/auth/signin`
+
 login as a user : `POST /api/auth/login`
 
-# post API 
+### post API 
 
 create a new post : `POST /api/posts/createpost`
+
 Retrieve all blog posts : `GET /api/posts/`
+
 Retrieve a single blog post by ID : `GET /api/posts/:postId`
+
 Update an existing post : `PUT /api/posts/updatepost/:postId`
+
 Delete a blog post : `DELETE /api/posts/deletepost/:postId`
