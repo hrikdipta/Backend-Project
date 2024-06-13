@@ -10,11 +10,11 @@ export const createPost = async (req,res)=>{
         const newPost = await Post.create({
             title,
             content,
-            author : req.user._id
-        }).populate('author','-password');
+            author : req.user.id
+        });
         return res.status(201).json(newPost);
     } catch (error) {
-        return res.status(500).json({msg:'Error creating post' + error.message});
+        return res.status(500).json({msg:'Error creating post ' + error.message});
     }
 }
 
@@ -22,7 +22,7 @@ export const createPost = async (req,res)=>{
 export const getAllPosts = async (req,res)=>{
     try {
         const posts = await Post.find();
-        return res.status(200).json(posts).populate('author','-password');
+        return res.status(200).json(posts);
     } catch (error) {
         return res.status(500).json({msg:'Internal Server Error' + error.message})
     }
@@ -37,7 +37,7 @@ export const getPost = async (req,res)=>{
         if(!post){
             return res.status(404).json({'message':'Post not found'})
         }
-        return res.status(200).json(post).populate('author','-password');
+        return res.status(200).json(post);
     } catch (error) {
         return res.status(500).json({msg:'Internal Server Error' + error.message})
     }
@@ -55,7 +55,7 @@ export const updatePost = async (req,res)=>{
         const newPost = await Post.findByIdAndUpdate(id,{
             title,
             content
-        },{new:true}).populate('author','-password');
+        },{new:true});
         return res.status(200).json(newPost);
     } catch (error) {
         return res.status(500).json({msg:'Error updating post' + error.message});
